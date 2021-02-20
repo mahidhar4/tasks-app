@@ -12,10 +12,6 @@ import Hello from "./Hello";
 import Login from "./src/Components/Login";
 import "./style.css";
 
-// Start the mocking conditionally.
-import { worker } from "./src/mocks/browser";
-worker.start();
-
 interface AppProps {}
 interface AppState {
   name: string;
@@ -28,6 +24,11 @@ class App extends Component<AppProps, AppState> {
       name: "React"
     };
   }
+  componentDidMount = async () => {
+    const result = await fetch("/mock.json");
+    alert(JSON.stringify(result));
+  };
+
   render() {
     return (
       <Router>

@@ -25,8 +25,9 @@ class App extends Component<AppProps, AppState> {
     };
   }
   componentDidMount = async () => {
-    const result = await fetch("/posts/1");
+    const result = await fetch("http:localhost:3001/posts/1");
     alert(JSON.stringify(result));
+    alert("hello");
   };
 
   render() {

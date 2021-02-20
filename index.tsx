@@ -25,7 +25,7 @@ class App extends Component<AppProps, AppState> {
     };
   }
   componentDidMount = async () => {
-    const result = await fetch("/mock.json");
+    const result = await fetch("/posts/1");
     alert(JSON.stringify(result));
   };
 
